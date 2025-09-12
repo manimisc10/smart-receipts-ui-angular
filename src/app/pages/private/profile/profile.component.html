@@ -1,0 +1,157 @@
+<div class="profile-container">
+  <!-- Header -->
+  <div class="profile-header">
+    <h1>Profile Settings</h1>
+    <p>Manage your account information and preferences</p>
+  </div>
+
+  <!-- Profile Information -->
+  <mat-card class="profile-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon class="profile-icon">person</mat-icon>
+        Account Information
+      </mat-card-title>
+      <mat-card-subtitle>Update your personal details</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <form [formGroup]="profileForm" class="profile-form">
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Full Name</mat-label>
+            <input matInput formControlName="name" placeholder="Enter your full name">
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error *ngIf="profileForm.get('name')?.invalid">
+              {{ getErrorMessage('name') }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email Address</mat-label>
+            <input matInput formControlName="email" type="email" placeholder="Enter your email">
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-error *ngIf="profileForm.get('email')?.invalid">
+              {{ getErrorMessage('email') }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-actions">
+          <button mat-stroked-button (click)="cancelEditing()" *ngIf="isEditing">
+            <mat-icon>cancel</mat-icon>
+            Cancel
+          </button>
+          <button mat-raised-button color="primary" (click)="saveProfile()" *ngIf="isEditing" [disabled]="profileForm.invalid">
+            <mat-icon>save</mat-icon>
+            Save Changes
+          </button>
+          <button mat-raised-button color="primary" (click)="startEditing()" *ngIf="!isEditing">
+            <mat-icon>edit</mat-icon>
+            Edit Profile
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Change Password -->
+  <mat-card class="password-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon class="password-icon">lock</mat-icon>
+        Change Password
+      </mat-card-title>
+      <mat-card-subtitle>Update your account password</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <form [formGroup]="passwordForm" class="password-form">
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Current Password</mat-label>
+            <input matInput formControlName="currentPassword" [type]="hidePassword ? 'password' : 'text'" placeholder="Enter current password">
+            <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" type="button">
+              <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="passwordForm.get('currentPassword')?.invalid">
+              Current password is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>New Password</mat-label>
+            <input matInput formControlName="newPassword" [type]="hideNewPassword ? 'password' : 'text'" placeholder="Enter new password">
+            <button mat-icon-button matSuffix (click)="hideNewPassword = !hideNewPassword" type="button">
+              <mat-icon>{{ hideNewPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="passwordForm.get('newPassword')?.invalid">
+              New password must be at least 6 characters
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Confirm New Password</mat-label>
+            <input matInput formControlName="confirmPassword" [type]="hideConfirmPassword ? 'password' : 'text'" placeholder="Confirm new password">
+            <button mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword" type="button">
+              <mat-icon>{{ hideConfirmPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="passwordForm.get('confirmPassword')?.invalid">
+              Please confirm your new password
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-actions">
+          <button mat-raised-button color="primary" (click)="changePassword()" [disabled]="passwordForm.invalid">
+            <mat-icon>lock_reset</mat-icon>
+            Change Password
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Account Actions -->
+  <mat-card class="actions-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon class="actions-icon">settings</mat-icon>
+        Account Actions
+      </mat-card-title>
+      <mat-card-subtitle>Manage your account settings</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <div class="actions-list">
+        <div class="action-item">
+          <div class="action-info">
+            <div class="action-title">Export Data</div>
+            <div class="action-description">Download all your receipt data</div>
+          </div>
+          <button mat-stroked-button>
+            <mat-icon>download</mat-icon>
+            Export
+          </button>
+        </div>
+
+        <div class="action-item">
+          <div class="action-info">
+            <div class="action-title">Delete Account</div>
+            <div class="action-description">Permanently delete your account and all data</div>
+          </div>
+          <button mat-stroked-button color="warn">
+            <mat-icon>delete_forever</mat-icon>
+            Delete
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

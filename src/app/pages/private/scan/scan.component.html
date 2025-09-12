@@ -1,0 +1,110 @@
+<div class="scan-container">
+  <div class="scan-header">
+    <h1>Scan Receipt</h1>
+    <p>Use your camera or upload a file to scan your receipt</p>
+  </div>
+
+  <!-- Camera Interface -->
+  <div class="camera-section" *ngIf="showCamera">
+    <mat-card class="camera-card">
+      <mat-card-content>
+        <div class="camera-container">
+          <video #video autoplay playsinline class="camera-video"></video>
+          <canvas #canvas style="display: none;"></canvas>
+          <div class="camera-overlay">
+            <div class="scan-frame">
+              <div class="corner top-left"></div>
+              <div class="corner top-right"></div>
+              <div class="corner bottom-left"></div>
+              <div class="corner bottom-right"></div>
+            </div>
+          </div>
+        </div>
+        <div class="camera-controls">
+          <button mat-raised-button color="warn" (click)="stopCamera()">
+            <mat-icon>close</mat-icon>
+            Cancel
+          </button>
+          <button mat-raised-button color="primary" (click)="capturePhoto()">
+            <mat-icon>camera_alt</mat-icon>
+            Capture
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Upload Interface -->
+  <div class="upload-section" *ngIf="!showCamera && !previewUrl">
+    <mat-card class="upload-card">
+      <mat-card-content>
+        <div class="upload-area" (click)="selectFile()">
+          <mat-icon class="upload-icon">cloud_upload</mat-icon>
+          <h3>Upload Receipt</h3>
+          <p>Click to select a file or drag and drop</p>
+          <p class="file-types">Supported: JPG, PNG, PDF</p>
+        </div>
+        <input #fileInput type="file" accept="image/*,.pdf" (change)="onFileSelected($event)" style="display: none;">
+      </mat-card-content>
+    </mat-card>
+
+    <div class="scan-options">
+      <div class="option-divider">
+        <span>or</span>
+      </div>
+      
+      <button mat-raised-button color="primary" (click)="startCamera()" class="camera-button">
+        <mat-icon>camera_alt</mat-icon>
+        Use Camera
+      </button>
+    </div>
+  </div>
+
+  <!-- Preview Section -->
+  <div class="preview-section" *ngIf="previewUrl">
+    <mat-card class="preview-card">
+      <mat-card-content>
+        <div class="preview-container">
+          <img [src]="previewUrl" alt="Receipt preview" class="preview-image">
+          <div class="preview-overlay" *ngIf="isProcessing">
+            <mat-spinner diameter="50"></mat-spinner>
+            <p>Processing receipt...</p>
+          </div>
+        </div>
+        <div class="preview-controls">
+          <button mat-stroked-button (click)="reset()" [disabled]="isProcessing">
+            <mat-icon>refresh</mat-icon>
+            Try Again
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Processing State -->
+  <div class="processing-section" *ngIf="isProcessing">
+    <mat-card class="processing-card">
+      <mat-card-content>
+        <div class="processing-content">
+          <mat-spinner diameter="60"></mat-spinner>
+          <h3>Processing Your Receipt</h3>
+          <p>Our AI is extracting data from your receipt...</p>
+          <div class="processing-steps">
+            <div class="step">
+              <mat-icon class="step-icon">image</mat-icon>
+              <span>Analyzing image</span>
+            </div>
+            <div class="step">
+              <mat-icon class="step-icon">text_fields</mat-icon>
+              <span>Extracting text</span>
+            </div>
+            <div class="step">
+              <mat-icon class="step-icon">receipt</mat-icon>
+              <span>Structuring data</span>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

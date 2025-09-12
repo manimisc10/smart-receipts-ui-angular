@@ -1,0 +1,579 @@
+<div class="landing-container">
+  <!-- Sticky Header -->
+  <header class="sticky-header">
+    <div class="header-content">
+      <a routerLink="/" class="header-logo">
+        <mat-icon class="logo-icon">receipt</mat-icon>
+        <span class="app-name">Smart Receipts</span>
+      </a>
+      <div class="header-actions">
+        <a routerLink="/login" class="header-button secondary">
+          <span>Sign In</span>
+        </a>
+        <a routerLink="/register" class="header-button primary">
+          <span>Sign Up Free</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="highlight">Smart Receipts</span>
+      </h1>
+      <h2 class="hero-subtitle-title">AI-Powered Receipt Scanner & Expense Tracker</h2>
+      <p class="hero-subtitle">
+        Transform your expense management with our intelligent receipt scanning app. 
+        Simply take a photo of any receipt and watch as our AI instantly extracts 
+        merchant details, items, prices, and totals with 99.5% accuracy.
+      </p>
+    </div>
+    
+    <!-- Desktop Mockup -->
+    <div class="hero-image desktop-mockup">
+      <div class="mockup-desktop">
+        <div class="desktop-screen">
+          <div class="desktop-header">
+            <div class="desktop-logo">
+              <svg class="logo-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2ZM18 20H6V4H13V9H18V20Z"/>
+              </svg>
+              <span class="app-name">Smart Receipts</span>
+            </div>
+            <div class="desktop-menu">
+              <span class="menu-item">Dashboard</span>
+              <span class="menu-item">Scan</span>
+              <span class="menu-item">History</span>
+              <span class="menu-item">Analytics</span>
+            </div>
+          </div>
+          <div class="desktop-content">
+            <div class="desktop-sidebar">
+              <div class="sidebar-item active">
+                <svg class="sidebar-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 13H11V3H3V13ZM3 21H11V15H3V21ZM13 21H21V11H13V21ZM13 3V9H21V3H13Z"/>
+                </svg>
+                <span>Dashboard</span>
+              </div>
+              <div class="sidebar-item">
+                <svg class="sidebar-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9ZM19 9H14V4H5V21H19V9Z"/>
+                </svg>
+                <span>Scan Receipt</span>
+              </div>
+              <div class="sidebar-item">
+                <svg class="sidebar-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13 9H18.5L13 3.5V9ZM6 2H14L20 8V20C20 21.1 19.1 22 18 22H6C4.89 22 4 21.1 4 20V4C4 2.89 4.89 2 6 2ZM6 20H18V9H13V4H6V20Z"/>
+                </svg>
+                <span>History</span>
+              </div>
+              <div class="sidebar-item">
+                <svg class="sidebar-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM9 17H7V10H9V17ZM13 17H11V7H13V17ZM17 17H15V13H17V17Z"/>
+                </svg>
+                <span>Analytics</span>
+              </div>
+            </div>
+            <div class="desktop-main">
+              <div class="desktop-stats">
+                <div class="stat-box">
+                  <div class="stat-number">$2,847</div>
+                  <div class="stat-label">This Month</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">156</div>
+                  <div class="stat-label">Receipts</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">12</div>
+                  <div class="stat-label">Categories</div>
+                </div>
+              </div>
+              <div class="desktop-receipts">
+                <div class="receipt-header">
+                  <h3>Receipt Details</h3>
+                  <div class="receipt-meta">
+                    <div class="merchant-info">
+                      <span class="merchant-name">Walmart</span>
+                      <span class="receipt-date">Jan 15, 2024 • 2:34 PM</span>
+                    </div>
+                    <span class="receipt-total">$23.78</span>
+                  </div>
+                </div>
+                <div class="receipt-items">
+                  <div class="receipt-item">
+                    <div class="item-info">
+                      <div class="item-name">Organic Bananas</div>
+                      <div class="item-details">2 lbs @ $0.99/lb</div>
+                    </div>
+                    <div class="item-price">$1.98</div>
+                  </div>
+                  <div class="receipt-item">
+                    <div class="item-info">
+                      <div class="item-name">Whole Milk</div>
+                      <div class="item-details">1 gal @ $3.49</div>
+                    </div>
+                    <div class="item-price">$3.49</div>
+                  </div>
+                  <div class="receipt-item">
+                    <div class="item-info">
+                      <div class="item-name">Bread - Wheat</div>
+                      <div class="item-details">1 loaf @ $2.99</div>
+                    </div>
+                    <div class="item-price">$2.99</div>
+                  </div>
+                  <div class="receipt-item">
+                    <div class="item-info">
+                      <div class="item-name">Eggs - Large</div>
+                      <div class="item-details">12 ct @ $4.99</div>
+                    </div>
+                    <div class="item-price">$4.99</div>
+                  </div>
+                  <div class="receipt-item">
+                    <div class="item-info">
+                      <div class="item-name">Chicken Breast</div>
+                      <div class="item-details">1.5 lbs @ $5.99/lb</div>
+                    </div>
+                    <div class="item-price">$8.99</div>
+                  </div>
+                </div>
+                <div class="receipt-summary">
+                  <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>$22.44</span>
+                  </div>
+                  <div class="summary-row">
+                    <span>Tax</span>
+                    <span>$1.34</span>
+                  </div>
+                  <div class="summary-row total">
+                    <span>Total</span>
+                    <span>$23.78</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Mockup -->
+    <div class="hero-image mobile-mockup">
+      <div class="mockup-phone">
+        <div class="phone-screen">
+          <div class="app-header">
+            <div class="app-logo">
+              <svg class="logo-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2ZM18 20H6V4H13V9H18V20Z"/>
+              </svg>
+              <span class="app-name">Smart Receipts</span>
+            </div>
+            <div class="app-status">
+              <span class="time">9:41</span>
+              <div class="status-icons">
+                <span class="signal">📶</span>
+                <span class="battery">🔋</span>
+              </div>
+            </div>
+          </div>
+          <div class="app-content">
+            <!-- Mobile Stats Section -->
+            <div class="mobile-stats">
+              <div class="stat-item">
+                <div class="stat-value">$2,847</div>
+                <div class="stat-label">This Month</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">156</div>
+                <div class="stat-label">Receipts</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">12</div>
+                <div class="stat-label">Categories</div>
+              </div>
+            </div>
+            
+            <!-- Scan Button -->
+            <div class="scan-button">
+              <svg class="scan-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9ZM19 9H14V4H5V21H19V9Z"/>
+              </svg>
+              <span>Scan Receipt</span>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+              <div class="action-item">
+                <svg class="action-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM9 17H7V10H9V17ZM13 17H11V7H13V17ZM17 17H15V13H17V17Z"/>
+                </svg>
+                <span>Analytics</span>
+              </div>
+              <div class="action-item">
+                <svg class="action-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14Z"/>
+                </svg>
+                <span>Search</span>
+              </div>
+              <div class="action-item">
+                <svg class="action-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM20.71 7.04C21.1 6.65 21.1 6.02 20.71 5.63L18.37 3.29C17.98 2.9 17.35 2.9 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04Z"/>
+                </svg>
+                <span>Export</span>
+              </div>
+            </div>
+            
+            <!-- Receipt Details -->
+            <div class="receipt-details">
+              <div class="receipt-header">
+                <div class="merchant-info">
+                  <div class="merchant-name">Walmart</div>
+                  <div class="receipt-date">Jan 15, 2024 • 2:34 PM</div>
+                </div>
+                <div class="receipt-total">$23.78</div>
+              </div>
+              
+              <div class="receipt-items">
+                <div class="item-row">
+                  <div class="item-info">
+                    <div class="item-name">Organic Bananas</div>
+                    <div class="item-details">2 lbs @ $0.99/lb</div>
+                  </div>
+                  <div class="item-price">$1.98</div>
+                </div>
+                <div class="item-row">
+                  <div class="item-info">
+                    <div class="item-name">Whole Milk</div>
+                    <div class="item-details">1 gal @ $3.49</div>
+                  </div>
+                  <div class="item-price">$3.49</div>
+                </div>
+                <div class="item-row">
+                  <div class="item-info">
+                    <div class="item-name">Bread - Wheat</div>
+                    <div class="item-details">1 loaf @ $2.99</div>
+                  </div>
+                  <div class="item-price">$2.99</div>
+                </div>
+                <div class="item-row">
+                  <div class="item-info">
+                    <div class="item-name">Eggs - Large</div>
+                    <div class="item-details">12 ct @ $4.99</div>
+                  </div>
+                  <div class="item-price">$4.99</div>
+                </div>
+                <div class="item-row">
+                  <div class="item-info">
+                    <div class="item-name">Chicken Breast</div>
+                    <div class="item-details">1.5 lbs @ $5.99/lb</div>
+                  </div>
+                  <div class="item-price">$8.99</div>
+                </div>
+              </div>
+              
+              <div class="receipt-summary">
+                <div class="summary-line">
+                  <span>Subtotal</span>
+                  <span>$22.44</span>
+                </div>
+                <div class="summary-line">
+                  <span>Tax</span>
+                  <span>$1.34</span>
+                </div>
+                <div class="summary-line total">
+                  <span>Total</span>
+                  <span>$23.78</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Bottom Navigation -->
+            <div class="mobile-nav">
+              <div class="nav-item active">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 13H11V3H3V13ZM3 21H11V15H3V21ZM13 21H21V11H13V21ZM13 3V9H21V3H13Z"/>
+                </svg>
+                <span>Dashboard</span>
+              </div>
+              <div class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9ZM19 9H14V4H5V21H19V9Z"/>
+                </svg>
+                <span>Scan</span>
+              </div>
+              <div class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13 9H18.5L13 3.5V9ZM6 2H14L20 8V20C20 21.1 19.1 22 18 22H6C4.89 22 4 21.1 4 20V4C4 2.89 4.89 2 6 2ZM6 20H18V9H13V4H6V20Z"/>
+                </svg>
+                <span>History</span>
+              </div>
+              <div class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM9 17H7V10H9V17ZM13 17H11V7H13V17ZM17 17H15V13H17V17Z"/>
+                </svg>
+                <span>Analytics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cool Features Section -->
+  <section class="features-section">
+    <h2 class="section-title">Cool Features That Make Smart Receipts Amazing</h2>
+    <div class="features-grid">
+      <mat-card class="feature-card">
+        <mat-card-content>
+          <div class="feature-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9ZM19 9H14V4H5V21H19V9Z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Instant AI Receipt Scanning</h3>
+          <p class="feature-description">
+            Point your phone camera at any receipt and our advanced AI instantly 
+            recognizes and extracts all the important information - merchant name, 
+            address, phone number, transaction date, every item with prices, 
+            subtotal, tax, and total amount. No more manual typing!
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="feature-card">
+        <mat-card-content>
+          <div class="feature-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM9 17H7V10H9V17ZM13 17H11V7H13V17ZM17 17H15V13H17V17Z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Smart Spending Analytics</h3>
+          <p class="feature-description">
+            Get beautiful charts and insights into your spending patterns. See 
+            how much you spend by category, track monthly trends, identify your 
+            biggest expenses, and get personalized spending recommendations. 
+            Understand your money better than ever before.
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="feature-card">
+        <mat-card-content>
+          <div class="feature-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14Z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Lightning-Fast Search</h3>
+          <p class="feature-description">
+            Find any receipt in seconds with our powerful search engine. Search 
+            by merchant name, item names, date ranges, price ranges, or categories. 
+            Sort by date, amount, or merchant. Never lose a receipt again!
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="feature-card">
+        <mat-card-content>
+          <div class="feature-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM20.71 7.04C21.1 6.65 21.1 6.02 20.71 5.63L18.37 3.29C17.98 2.9 17.35 2.9 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04Z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Edit & Export Anywhere</h3>
+          <p class="feature-description">
+            Review and edit extracted data if needed. Export receipts to PDF 
+            or CSV format for expense reports, tax purposes, or record keeping. 
+            Share receipts with colleagues or accountants easily.
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="feature-card">
+        <mat-card-content>
+          <div class="feature-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Auto Smart Categorization</h3>
+          <p class="feature-description">
+            Our AI automatically categorizes your receipts (groceries, dining, 
+            shopping, gas, etc.) for perfect organization. You can also create 
+            custom categories and rules for your specific needs.
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="feature-card">
+        <mat-card-content>
+          <div class="feature-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Cloud Sync & Backup</h3>
+          <p class="feature-description">
+            All your receipts are safely stored in the cloud and automatically 
+            synced across all your devices. Access your data from phone, tablet, 
+            or computer. Never worry about losing receipts again.
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+
+  <!-- What Smart Receipts Can Do Section -->
+  <section class="capabilities-section">
+    <h2 class="section-title">What Smart Receipts Can Do For You</h2>
+    <div class="capabilities-grid">
+                     <div class="capability-item">
+          <div class="capability-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2ZM18 20H6V4H13V9H18V20Z"/>
+            </svg>
+          </div>
+          <div class="capability-content">
+            <h3>Scan Any Receipt Type</h3>
+            <p>Works with receipts from grocery stores, restaurants, gas stations, online purchases, and more. Supports 50+ different receipt formats.</p>
+          </div>
+        </div>
+        
+        <div class="capability-item">
+          <div class="capability-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13 2.05V4.05C17.39 4.59 20.5 8.58 19.96 12.97C19.5 16.61 16.64 19.5 13 19.93V21.93C18.5 21.38 22.5 16.5 21.95 11C21.5 6.25 17.73 2.5 13 2.03V2.05ZM12 2.05C11.34 2.05 10.69 2.12 10.06 2.25V4.25C10.69 4.12 11.34 4.05 12 4.05C16.39 4.59 19.5 8.58 18.96 12.97C18.5 16.61 15.64 19.5 12 19.93V21.93C17.5 21.38 21.5 16.5 20.95 11C20.5 6.25 16.73 2.5 12 2.03V2.05ZM7 7L2 12L7 17V14H12V10H7V7Z"/>
+            </svg>
+          </div>
+          <div class="capability-content">
+            <h3>Process in Under 2 Seconds</h3>
+            <p>Our AI processes receipts faster than you can blink. No waiting, no delays - instant results every time.</p>
+          </div>
+        </div>
+        
+        <div class="capability-item">
+          <div class="capability-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+            </svg>
+          </div>
+          <div class="capability-content">
+            <h3>99.5% Accuracy Rate</h3>
+            <p>Industry-leading accuracy means you can trust the extracted data. Our AI learns and improves with every scan.</p>
+          </div>
+        </div>
+        
+        <div class="capability-item">
+          <div class="capability-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 6L18.29 8.29L13.41 13.17L9.41 9.17L2 16.59L3.41 18L9.41 12L13.41 16L19.71 9.71L22 12V6H16Z"/>
+            </svg>
+          </div>
+          <div class="capability-content">
+            <h3>Track Spending Trends</h3>
+            <p>See your spending patterns over time, identify areas to save money, and set budget goals with visual insights.</p>
+          </div>
+        </div>
+        
+        <div class="capability-item">
+          <div class="capability-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM12 7C13.4 7 14.8 8.6 14.8 10V11.5C15.4 11.5 16 12.1 16 12.7V15.2C16 15.8 15.4 16.4 14.8 16.4H9.2C8.6 16.4 8 15.8 8 15.2V12.7C8 12.1 8.6 11.5 9.2 11.5V10C9.2 8.6 10.6 7 12 7ZM12 8.2C11.2 8.2 10.5 8.7 10.5 9.5V11H13.5V9.5C13.5 8.7 12.8 8.2 12 8.2Z"/>
+            </svg>
+          </div>
+          <div class="capability-content">
+            <h3>Bank-Level Security</h3>
+            <p>Your financial data is encrypted and protected with enterprise-grade security. Your privacy is our top priority.</p>
+          </div>
+        </div>
+        
+        <div class="capability-item">
+          <div class="capability-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 1.01L7 1C5.9 1 5 1.9 5 3V21C5 22.1 5.9 23 7 23H17C18.1 23 19 22.1 19 21V3C19 1.9 18.1 1.01 17 1.01ZM17 19H7V5H17V19Z"/>
+            </svg>
+          </div>
+          <div class="capability-content">
+            <h3>Works on All Devices</h3>
+            <p>Use on your phone, tablet, or computer. Responsive design works perfectly on any screen size.</p>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works-section">
+    <h2 class="section-title">How Smart Receipts Works</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Take Photo</h3>
+        <p>Point your camera at any receipt or upload an image/PDF file from your device</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>AI Processing</h3>
+        <p>Our advanced AI extracts all data automatically in under 2 seconds with 99.5% accuracy</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Review & Edit</h3>
+        <p>Check the extracted data and make any corrections if needed. Everything is editable</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <h3>Organize & Analyze</h3>
+        <p>View insights, search receipts, export data, and track your spending patterns</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <h2 class="section-title">Why Users Love Smart Receipts</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">99.5%</div>
+        <div class="stat-label">Data Extraction Accuracy</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">&lt; 2s</div>
+        <div class="stat-label">Average Processing Time</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">50+</div>
+        <div class="stat-label">Supported Receipt Formats</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">24/7</div>
+        <div class="stat-label">Cloud Availability</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to Transform Your Receipt Management?</h2>
+      <p>Join thousands of users who have simplified their expense tracking with Smart Receipts</p>
+             <div class="cta-buttons">
+         <a routerLink="/register" class="cta-button primary">
+           <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+             <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+           </svg>
+           <span>Sign Up Free</span>
+         </a>
+         <a routerLink="/login" class="cta-button secondary">
+           <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+             <path d="M11 7L9.6 8.4L12.2 11H2V13H12.2L9.6 15.6L11 17L16 12L11 7ZM20 19H12V21H20C21.1 21 22 20.1 22 19V5C22 3.9 21.1 3 20 3H12V5H20V19Z"/>
+           </svg>
+           <span>Sign In to Existing Account</span>
+         </a>
+       </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,270 @@
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+// Header
+.profile-header {
+  text-align: center;
+  margin-bottom: 32px;
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+  }
+}
+
+// Profile Card
+.profile-card {
+  margin-bottom: 24px;
+  border-radius: 12px;
+  
+  mat-card-header {
+    margin-bottom: 24px;
+  }
+  
+  mat-card-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    
+    .profile-icon {
+      margin-right: 12px;
+      color: #667eea;
+      font-size: 1.8rem;
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+  
+  mat-card-subtitle {
+    color: #666;
+    font-size: 1rem;
+  }
+}
+
+.profile-form {
+  .form-row {
+    margin-bottom: 20px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+}
+
+// Password Card
+.password-card {
+  margin-bottom: 24px;
+  border-radius: 12px;
+  
+  mat-card-header {
+    margin-bottom: 24px;
+  }
+  
+  mat-card-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    
+    .password-icon {
+      margin-right: 12px;
+      color: #667eea;
+      font-size: 1.8rem;
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+  
+  mat-card-subtitle {
+    color: #666;
+    font-size: 1rem;
+  }
+}
+
+.password-form {
+  .form-row {
+    margin-bottom: 20px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+}
+
+// Form Actions
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+  
+  button {
+    padding: 12px 24px;
+    font-weight: 500;
+    
+    mat-icon {
+      margin-right: 8px;
+    }
+  }
+}
+
+// Actions Card
+.actions-card {
+  border-radius: 12px;
+  
+  mat-card-header {
+    margin-bottom: 24px;
+  }
+  
+  mat-card-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    
+    .actions-icon {
+      margin-right: 12px;
+      color: #667eea;
+      font-size: 1.8rem;
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+  
+  mat-card-subtitle {
+    color: #666;
+    font-size: 1rem;
+  }
+}
+
+.actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.action-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background: #e9ecef;
+  }
+  
+  .action-info {
+    flex: 1;
+    
+    .action-title {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 4px;
+    }
+    
+    .action-description {
+      color: #666;
+      font-size: 0.9rem;
+    }
+  }
+  
+  button {
+    padding: 8px 16px;
+    font-weight: 500;
+    
+    mat-icon {
+      margin-right: 4px;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 16px;
+  }
+  
+  .profile-header {
+    h1 {
+      font-size: 2rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  .profile-card, .password-card, .actions-card {
+    mat-card-title {
+      font-size: 1.3rem;
+      
+      .profile-icon, .password-icon, .actions-icon {
+        font-size: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    
+    button {
+      width: 100%;
+    }
+  }
+  
+  .action-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    
+    .action-info {
+      width: 100%;
+    }
+    
+    button {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .profile-card, .password-card, .actions-card {
+    mat-card-title {
+      font-size: 1.2rem;
+      
+      .profile-icon, .password-icon, .actions-icon {
+        font-size: 1.3rem;
+        width: 1.3rem;
+        height: 1.3rem;
+      }
+    }
+  }
+  
+  .action-item {
+    padding: 16px;
+  }
+}

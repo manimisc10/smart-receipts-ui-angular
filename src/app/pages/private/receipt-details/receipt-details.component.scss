@@ -1,0 +1,244 @@
+.receipt-details-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+// Header
+.receipt-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  
+  h1 {
+    flex: 1;
+    margin: 0 0 0 16px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.back-button {
+  color: #666;
+}
+
+// Receipt Info Card
+.receipt-info-card {
+  margin-bottom: 24px;
+  
+  mat-card-header {
+    margin-bottom: 16px;
+  }
+  
+  mat-card-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    
+    .merchant-icon {
+      margin-right: 12px;
+      color: #667eea;
+    }
+  }
+  
+  mat-card-subtitle {
+    color: #666;
+    font-size: 1rem;
+  }
+}
+
+.receipt-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    
+    mat-icon {
+      color: #667eea;
+      font-size: 1.2rem;
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+    
+    span {
+      color: #333;
+      font-weight: 500;
+    }
+  }
+}
+
+// Items Card
+.items-card {
+  margin-bottom: 24px;
+  
+  mat-card-header {
+    margin-bottom: 16px;
+  }
+  
+  mat-card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+  }
+}
+
+.items-table {
+  width: 100%;
+  
+  th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  td, th {
+    padding: 12px 16px;
+    text-align: left;
+  }
+  
+  tr:hover {
+    background: #f8f9fa;
+  }
+}
+
+// Summary Card
+.summary-card {
+  margin-bottom: 24px;
+  
+  mat-card-content {
+    padding: 0;
+  }
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  &.total {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    background: #f8f9fa;
+  }
+  
+  span:first-child {
+    color: #666;
+  }
+  
+  span:last-child {
+    color: #333;
+    font-weight: 500;
+  }
+}
+
+// Action Buttons
+.action-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  button {
+    padding: 12px 24px;
+    font-weight: 500;
+    
+    mat-icon {
+      margin-right: 8px;
+    }
+  }
+}
+
+// Loading State
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  
+  p {
+    margin-top: 16px;
+    color: #666;
+    font-size: 1.1rem;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .receipt-details-container {
+    padding: 16px;
+  }
+  
+  .receipt-header {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .receipt-meta {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .items-table {
+    font-size: 0.9rem;
+    
+    td, th {
+      padding: 8px 12px;
+    }
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    
+    button {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .receipt-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    
+    h1 {
+      margin: 0;
+    }
+    
+    .header-actions {
+      align-self: flex-end;
+    }
+  }
+  
+  .items-table {
+    font-size: 0.8rem;
+    
+    td, th {
+      padding: 6px 8px;
+    }
+  }
+}

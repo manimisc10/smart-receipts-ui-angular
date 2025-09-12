@@ -1,0 +1,188 @@
+<div class="analytics-container">
+  <!-- Header -->
+  <div class="analytics-header">
+    <h1>Analytics & Insights</h1>
+    <p>Track your spending patterns and get insights into your expenses</p>
+  </div>
+
+  <!-- Overview Cards -->
+  <div class="overview-grid">
+    <mat-card class="overview-card">
+      <mat-card-content>
+        <div class="overview-content">
+          <div class="overview-icon total-spent">
+            <mat-icon>attach_money</mat-icon>
+          </div>
+          <div class="overview-info">
+            <div class="overview-value">{{ formatCurrency(analytics.totalSpent) }}</div>
+            <div class="overview-label">Total Spent</div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="overview-card">
+      <mat-card-content>
+        <div class="overview-content">
+          <div class="overview-icon total-receipts">
+            <mat-icon>receipt</mat-icon>
+          </div>
+          <div class="overview-info">
+            <div class="overview-value">{{ analytics.totalReceipts }}</div>
+            <div class="overview-label">Total Receipts</div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="overview-card">
+      <mat-card-content>
+        <div class="overview-content">
+          <div class="overview-icon average">
+            <mat-icon>trending_up</mat-icon>
+          </div>
+          <div class="overview-info">
+            <div class="overview-value">{{ formatCurrency(analytics.averagePerReceipt) }}</div>
+            <div class="overview-label">Average per Receipt</div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="overview-card">
+      <mat-card-content>
+        <div class="overview-content">
+          <div class="overview-icon this-month">
+            <mat-icon>calendar_today</mat-icon>
+          </div>
+          <div class="overview-info">
+            <div class="overview-value">{{ formatCurrency(analytics.thisMonth) }}</div>
+            <div class="overview-label">This Month</div>
+            <div class="overview-change" [style.color]="getPercentageChangeColor()">
+              <mat-icon>{{ getPercentageChange() >= 0 ? 'trending_up' : 'trending_down' }}</mat-icon>
+              {{ getPercentageChange() >= 0 ? '+' : '' }}{{ getPercentageChange() | number:'1.1-1' }}% vs last month
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Charts Section -->
+  <div class="charts-section">
+    <!-- Monthly Spending Chart -->
+    <mat-card class="chart-card">
+      <mat-card-header>
+        <mat-card-title>Monthly Spending Trend</mat-card-title>
+        <mat-card-subtitle>Your spending over the last 6 months</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="chart-container">
+          <div class="monthly-chart">
+            <div class="chart-bar" *ngFor="let month of analytics.monthlySpending" 
+                 [style.height]="getBarHeight(month.amount) + '%'"
+                 [style.background]="getBarColor(month.amount)">
+              <div class="bar-tooltip">
+                <div class="tooltip-month">{{ month.month }}</div>
+                <div class="tooltip-amount">{{ formatCurrency(month.amount) }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="chart-labels">
+            <span *ngFor="let month of analytics.monthlySpending">{{ month.month }}</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Top Categories -->
+    <mat-card class="chart-card">
+      <mat-card-header>
+        <mat-card-title>Top Spending Categories</mat-card-title>
+        <mat-card-subtitle>Where you spend the most</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="categories-list" *ngIf="analytics.topCategories.length > 0">
+          <div class="category-item" *ngFor="let category of analytics.topCategories">
+            <div class="category-info">
+              <div class="category-name">{{ category.name }}</div>
+              <div class="category-amount">{{ formatCurrency(category.amount) }}</div>
+            </div>
+            <div class="category-bar">
+              <div class="category-progress" 
+                   [style.width]="getCategoryPercentage(category.amount) + '%'"
+                   [style.background]="getCategoryColor(category.name)">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="no-data" *ngIf="analytics.topCategories.length === 0">
+          <mat-icon>pie_chart</mat-icon>
+          <p>No category data available</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Insights Section -->
+  <div class="insights-section">
+    <mat-card class="insights-card">
+      <mat-card-header>
+        <mat-card-title>Spending Insights</mat-card-title>
+        <mat-card-subtitle>Key observations about your spending habits</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="insights-list">
+          <div class="insight-item" *ngIf="analytics.totalReceipts > 0">
+            <mat-icon class="insight-icon">info</mat-icon>
+            <div class="insight-content">
+              <div class="insight-title">Average Transaction</div>
+              <div class="insight-description">
+                You spend an average of {{ formatCurrency(analytics.averagePerReceipt) }} per receipt
+              </div>
+            </div>
+          </div>
+          
+          <div class="insight-item" *ngIf="getPercentageChange() !== 0">
+            <mat-icon class="insight-icon" [style.color]="getPercentageChangeColor()">
+              {{ getPercentageChange() >= 0 ? 'trending_up' : 'trending_down' }}
+            </mat-icon>
+            <div class="insight-content">
+              <div class="insight-title">Monthly Trend</div>
+              <div class="insight-description">
+                Your spending {{ getPercentageChange() >= 0 ? 'increased' : 'decreased' }} by 
+                {{ Math.abs(getPercentageChange()) | number:'1.1-1' }}% compared to last month
+              </div>
+            </div>
+          </div>
+          
+          <div class="insight-item" *ngIf="analytics.topCategories.length > 0">
+            <mat-icon class="insight-icon">category</mat-icon>
+            <div class="insight-content">
+              <div class="insight-title">Top Category</div>
+              <div class="insight-description">
+                {{ analytics.topCategories[0].name }} is your highest spending category at 
+                {{ formatCurrency(analytics.topCategories[0].amount) }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Empty State -->
+  <mat-card class="empty-state" *ngIf="analytics.totalReceipts === 0">
+    <mat-card-content>
+      <div class="empty-content">
+        <mat-icon class="empty-icon">analytics</mat-icon>
+        <h3>No data to analyze</h3>
+        <p>Start scanning receipts to see your spending analytics</p>
+        <button mat-raised-button color="primary" routerLink="/scan">
+          <mat-icon>camera_alt</mat-icon>
+          Scan First Receipt
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

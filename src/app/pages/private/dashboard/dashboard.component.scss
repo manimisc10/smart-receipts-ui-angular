@@ -1,0 +1,591 @@
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+// Welcome Section
+.welcome-section {
+  margin-bottom: 32px;
+  
+  .welcome-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+  }
+}
+
+// Quick Actions
+.quick-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  
+  .action-button {
+    padding: 12px 24px;
+    font-weight: 500;
+    min-height: 48px;
+    
+    mat-icon {
+      margin-right: 8px;
+    }
+    
+    &.primary-action {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    &.secondary-action {
+      flex: 1;
+      min-width: 150px;
+      
+      // Force blue borders for stroked buttons
+      &.mat-mdc-stroked-button {
+        border: 2px solid #3b82f6 !important;
+        color: #3b82f6 !important;
+        
+        &:hover {
+          border: 2px solid #3b82f6 !important;
+          background-color: #dbeafe !important;
+        }
+        
+        &:focus {
+          border: 2px solid #3b82f6 !important;
+          box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+        }
+      }
+    }
+  }
+}
+
+// Ultra-aggressive override for dashboard buttons
+::ng-deep .dashboard-container button[mat-stroked-button] {
+  border: 2px solid #3b82f6 !important;
+  color: #3b82f6 !important;
+}
+
+::ng-deep .dashboard-container button[mat-stroked-button]:hover {
+  border: 2px solid #3b82f6 !important;
+  background-color: #dbeafe !important;
+}
+
+::ng-deep .dashboard-container button[mat-stroked-button]:focus {
+  border: 2px solid #3b82f6 !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+}
+
+// Stats Grid
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+}
+
+.stat-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  mat-icon {
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+    color: white;
+  }
+  
+  &.total-receipts {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  &.total-spent {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  }
+  
+  &.this-month {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+  
+  &.average {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  }
+}
+
+.stat-info {
+  flex: 1;
+  
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+  }
+}
+
+// Recent Section
+.recent-section {
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+  }
+}
+
+.recent-receipts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.receipt-card {
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+}
+
+.receipt-info {
+  flex: 1;
+}
+
+.receipt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  
+  .merchant-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+  }
+  
+  .receipt-date {
+    font-size: 0.9rem;
+    color: #666;
+    background: #f5f5f5;
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+}
+
+.receipt-details {
+  .receipt-address {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 0 8px 0;
+  }
+  
+  .receipt-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .total-label {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    
+    .total-amount {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+    }
+  }
+}
+
+.receipt-arrow {
+  color: #ccc;
+  margin-left: 16px;
+}
+
+// Empty State
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  border-radius: 12px;
+  
+  .empty-content {
+    .empty-icon {
+      font-size: 4rem;
+      width: 4rem;
+      height: 4rem;
+      color: #ccc;
+      margin-bottom: 16px;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    
+    p {
+      color: #666;
+      margin-bottom: 24px;
+    }
+    
+    button {
+      padding: 12px 24px;
+      
+      mat-icon {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 16px;
+    max-width: 100%;
+  }
+  
+  // Welcome Section Mobile
+  .welcome-section {
+    margin-bottom: 24px;
+    text-align: center;
+    
+    .welcome-title {
+      font-size: 1.8rem;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    
+    .welcome-subtitle {
+      font-size: 1rem;
+      margin: 0;
+    }
+  }
+  
+  // Quick Actions Mobile
+  .quick-actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+    
+    .action-button {
+      width: 100%;
+      padding: 16px 24px;
+      font-size: 1rem;
+      
+      mat-icon {
+        margin-right: 8px;
+      }
+    }
+  }
+  
+  // Stats Grid Mobile
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .stat-card {
+    padding: 16px;
+    
+    .stat-content {
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+      gap: 16px;
+    }
+    
+    .stat-icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      
+      mat-icon {
+        font-size: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+    
+    .stat-info {
+      .stat-value {
+        font-size: 1.4rem;
+        margin-bottom: 2px;
+      }
+      
+      .stat-label {
+        font-size: 0.85rem;
+      }
+    }
+  }
+  
+  // Section Header Mobile
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+    
+    h2 {
+      font-size: 1.3rem;
+    }
+    
+    button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  // Receipt Cards Mobile
+  .recent-receipts {
+    gap: 12px;
+  }
+  
+  .receipt-card {
+    padding: 16px;
+    
+    mat-card-content {
+      padding: 0 !important;
+    }
+    
+    .receipt-info {
+      .receipt-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 12px;
+        
+        .merchant-name {
+          font-size: 1rem;
+          line-height: 1.3;
+        }
+        
+        .receipt-date {
+          font-size: 0.8rem;
+          padding: 3px 6px;
+          align-self: flex-start;
+        }
+      }
+      
+      .receipt-details {
+        .receipt-address {
+          font-size: 0.85rem;
+          margin-bottom: 8px;
+          line-height: 1.4;
+        }
+        
+        .receipt-total {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 4px;
+          
+          .total-label {
+            font-size: 0.8rem;
+          }
+          
+          .total-amount {
+            font-size: 1.1rem;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+    
+    .receipt-arrow {
+      display: none; // Hide arrow on mobile for cleaner look
+    }
+  }
+  
+  // Empty State Mobile
+  .empty-state {
+    padding: 32px 16px;
+    
+    .empty-content {
+      .empty-icon {
+        font-size: 3rem;
+        width: 3rem;
+        height: 3rem;
+        margin-bottom: 12px;
+      }
+      
+      h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+      }
+      
+      p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+      
+      button {
+        width: 100%;
+        padding: 16px 24px;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 12px;
+  }
+  
+  .welcome-section {
+    .welcome-title {
+      font-size: 1.6rem;
+    }
+    
+    .welcome-subtitle {
+      font-size: 0.95rem;
+    }
+  }
+  
+  .quick-actions {
+    .action-button {
+      padding: 14px 20px;
+      font-size: 0.95rem;
+    }
+  }
+  
+  .stat-card {
+    padding: 12px;
+    
+    .stat-content {
+      gap: 12px;
+    }
+    
+    .stat-icon {
+      width: 44px;
+      height: 44px;
+      
+      mat-icon {
+        font-size: 1.3rem;
+        width: 1.3rem;
+        height: 1.3rem;
+      }
+    }
+    
+    .stat-info {
+      .stat-value {
+        font-size: 1.2rem;
+      }
+      
+      .stat-label {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  
+  .receipt-card {
+    padding: 12px;
+  }
+}
+
+// Extra small screens
+@media (max-width: 360px) {
+  .dashboard-container {
+    padding: 8px;
+  }
+  
+  .welcome-section {
+    margin-bottom: 20px;
+    
+    .welcome-title {
+      font-size: 1.4rem;
+    }
+    
+    .welcome-subtitle {
+      font-size: 0.9rem;
+    }
+  }
+  
+  .quick-actions {
+    margin-bottom: 20px;
+    
+    .action-button {
+      padding: 12px 16px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .stats-grid {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .stat-card {
+    padding: 10px;
+    
+    .stat-content {
+      gap: 10px;
+    }
+    
+    .stat-icon {
+      width: 40px;
+      height: 40px;
+      
+      mat-icon {
+        font-size: 1.2rem;
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+    
+    .stat-info {
+      .stat-value {
+        font-size: 1.1rem;
+      }
+      
+      .stat-label {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}

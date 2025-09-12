@@ -1,0 +1,379 @@
+.scan-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.scan-header {
+  text-align: center;
+  margin-bottom: 32px;
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+  }
+}
+
+// Camera Section
+.camera-section {
+  .camera-card {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+}
+
+.camera-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.camera-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.camera-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scan-frame {
+  width: 80%;
+  height: 60%;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+}
+
+.corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--primary-color);
+  
+  &.top-left {
+    top: -3px;
+    left: -3px;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 12px 0 0 0;
+  }
+  
+  &.top-right {
+    top: -3px;
+    right: -3px;
+    border-left: none;
+    border-bottom: none;
+    border-radius: 0 12px 0 0;
+  }
+  
+  &.bottom-left {
+    bottom: -3px;
+    left: -3px;
+    border-right: none;
+    border-top: none;
+    border-radius: 0 0 0 12px;
+  }
+  
+  &.bottom-right {
+    bottom: -3px;
+    right: -3px;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 12px 0;
+  }
+}
+
+.camera-controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  
+  button {
+    padding: 12px 24px;
+    font-weight: 500;
+    
+    mat-icon {
+      margin-right: 8px;
+    }
+  }
+}
+
+// Upload Section
+.upload-section {
+  .upload-card {
+    border-radius: 16px;
+    margin-bottom: 24px;
+  }
+}
+
+.upload-area {
+  border: 2px dashed #ddd;
+  border-radius: 12px;
+  padding: 48px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  
+  &:hover {
+    border-color: var(--primary-color);
+    background-color: var(--primary-light);
+  }
+  
+  .upload-icon {
+    font-size: 4rem;
+    width: 4rem;
+    height: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  p {
+    color: #666;
+    margin-bottom: 4px;
+    
+    &.file-types {
+      font-size: 0.9rem;
+      color: #999;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.scan-options {
+  text-align: center;
+  
+  .option-divider {
+    margin: 24px 0;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: #ddd;
+    }
+    
+    span {
+      background: white;
+      padding: 0 16px;
+      color: #666;
+      font-weight: 500;
+    }
+  }
+  
+  .camera-button {
+    padding: 12px 32px;
+    font-weight: 500;
+    
+    mat-icon {
+      margin-right: 8px;
+    }
+  }
+}
+
+// Preview Section
+.preview-section {
+  .preview-card {
+    border-radius: 16px;
+  }
+}
+
+.preview-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.preview-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.preview-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  
+  p {
+    margin-top: 16px;
+    font-weight: 500;
+  }
+}
+
+.preview-controls {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  
+  button {
+    padding: 12px 24px;
+    
+    mat-icon {
+      margin-right: 8px;
+    }
+  }
+}
+
+// Processing Section
+.processing-section {
+  .processing-card {
+    border-radius: 16px;
+    text-align: center;
+  }
+}
+
+.processing-content {
+  padding: 48px 24px;
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 24px 0 8px 0;
+  }
+  
+  p {
+    color: #666;
+    margin-bottom: 32px;
+  }
+}
+
+.processing-steps {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  
+  .step-icon {
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
+    color: var(--primary-color);
+  }
+  
+  span {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .scan-container {
+    padding: 16px;
+  }
+  
+  .scan-header h1 {
+    font-size: 2rem;
+  }
+  
+  .camera-controls {
+    flex-direction: column;
+    align-items: center;
+    
+    button {
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+  
+  .upload-area {
+    padding: 32px 16px;
+    
+    .upload-icon {
+      font-size: 3rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
+  
+  .processing-steps {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .step {
+    flex-direction: row;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scan-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .scan-header p {
+    font-size: 1rem;
+  }
+  
+  .camera-container {
+    border-radius: 8px;
+  }
+  
+  .scan-frame {
+    width: 90%;
+    height: 70%;
+  }
+  
+  .corner {
+    width: 15px;
+    height: 15px;
+  }
+}

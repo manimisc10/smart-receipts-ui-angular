@@ -1,0 +1,256 @@
+.history-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+// Header
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+  }
+  
+  button {
+    padding: 12px 24px;
+    font-weight: 500;
+    
+    mat-icon {
+      margin-right: 8px;
+    }
+  }
+}
+
+// Filters Card
+.filters-card {
+  margin-bottom: 24px;
+  
+  mat-card-content {
+    padding: 24px;
+  }
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.search-field {
+  width: 100%;
+}
+
+.date-filters, .price-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  
+  button {
+    padding: 8px 16px;
+    
+    mat-icon {
+      margin-right: 4px;
+    }
+  }
+}
+
+// Results Summary
+.results-summary {
+  margin-bottom: 16px;
+  
+  p {
+    color: #666;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+// Table Card
+.table-card {
+  margin-bottom: 24px;
+  
+  mat-card-content {
+    padding: 0;
+  }
+}
+
+.receipts-table {
+  width: 100%;
+  
+  th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+    padding: 16px;
+  }
+  
+  td {
+    padding: 16px;
+    vertical-align: top;
+  }
+  
+  tr:hover {
+    background: #f8f9fa;
+  }
+}
+
+.merchant-info {
+  .merchant-name {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+  }
+  
+  .merchant-address {
+    font-size: 0.9rem;
+    color: #666;
+  }
+}
+
+.category-badge {
+  background: #667eea;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.no-category {
+  color: #999;
+  font-style: italic;
+}
+
+.total-amount {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+// Empty State
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  
+  .empty-content {
+    .empty-icon {
+      font-size: 4rem;
+      width: 4rem;
+      height: 4rem;
+      color: #ccc;
+      margin-bottom: 16px;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    
+    p {
+      color: #666;
+      margin-bottom: 24px;
+    }
+    
+    button {
+      padding: 12px 24px;
+      
+      mat-icon {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .history-container {
+    padding: 16px;
+  }
+  
+  .history-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    button {
+      width: 100%;
+    }
+  }
+  
+  .filters-grid {
+    gap: 16px;
+  }
+  
+  .date-filters, .price-filters {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .filter-actions {
+    justify-content: stretch;
+    
+    button {
+      flex: 1;
+    }
+  }
+  
+  .receipts-table {
+    font-size: 0.9rem;
+    
+    th, td {
+      padding: 12px 8px;
+    }
+  }
+  
+  .merchant-info {
+    .merchant-name {
+      font-size: 0.9rem;
+    }
+    
+    .merchant-address {
+      font-size: 0.8rem;
+    }
+  }
+  
+  .total-amount {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .history-header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .receipts-table {
+    font-size: 0.8rem;
+    
+    th, td {
+      padding: 8px 4px;
+    }
+  }
+  
+  .category-badge {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+  }
+}
