@@ -47,18 +47,20 @@
       flex: 1;
       min-width: 150px;
       
-      // Force blue borders for stroked buttons
+      // Gray borders and text for stroked buttons to match header
       &.mat-mdc-stroked-button {
-        border: 2px solid #3b82f6 !important;
-        color: #3b82f6 !important;
+        border: 1px solid #6b7280 !important;
+        color: #374151 !important; // Match header menu item text color
+        font-weight: 500 !important; // Match header menu item font weight
         
         &:hover {
-          border: 2px solid #3b82f6 !important;
-          background-color: #dbeafe !important;
+          border: 1px solid #3b82f6 !important;
+          background-color: rgba(59, 130, 246, 0.1) !important;
+          color: #3b82f6 !important;
         }
         
         &:focus {
-          border: 2px solid #3b82f6 !important;
+          border: 1px solid #3b82f6 !important;
           box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
         }
       }
@@ -68,17 +70,19 @@
 
 // Ultra-aggressive override for dashboard buttons
 ::ng-deep .dashboard-container button[mat-stroked-button] {
-  border: 2px solid #3b82f6 !important;
-  color: #3b82f6 !important;
+  border: 1px solid #6b7280 !important;
+  color: #374151 !important; // Match header menu item text color
+  font-weight: 500 !important; // Match header menu item font weight
 }
 
 ::ng-deep .dashboard-container button[mat-stroked-button]:hover {
-  border: 2px solid #3b82f6 !important;
-  background-color: #dbeafe !important;
+  border: 1px solid #3b82f6 !important;
+  background-color: rgba(59, 130, 246, 0.1) !important;
+  color: #3b82f6 !important;
 }
 
 ::ng-deep .dashboard-container button[mat-stroked-button]:focus {
-  border: 2px solid #3b82f6 !important;
+  border: 1px solid #3b82f6 !important;
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
 }
 
@@ -131,6 +135,39 @@
   
   &.this-month {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    position: relative;
+    
+    mat-icon {
+      font-size: 2rem;
+      width: 2rem;
+      height: 2rem;
+      color: white;
+      opacity: 0.8; // Further increase opacity for better visibility
+    }
+    
+    .month-display {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      
+      .month-abbr {
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: white;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+        letter-spacing: 0.5px;
+        text-transform: capitalize;
+        padding: 1px 2px;
+        text-align: center;
+        line-height: 1;
+      }
+    }
   }
   
   &.average {
@@ -350,6 +387,18 @@
         width: 1.5rem;
         height: 1.5rem;
       }
+      
+      &.this-month {
+        mat-icon {
+          font-size: 1.5rem;
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+        
+        .month-display .month-abbr {
+          font-size: 0.6rem;
+        }
+      }
     }
     
     .stat-info {
@@ -510,6 +559,18 @@
         width: 1.3rem;
         height: 1.3rem;
       }
+      
+      &.this-month {
+        mat-icon {
+          font-size: 1.3rem;
+          width: 1.3rem;
+          height: 1.3rem;
+        }
+        
+        .month-display .month-abbr {
+          font-size: 0.55rem;
+        }
+      }
     }
     
     .stat-info {
@@ -575,6 +636,18 @@
         font-size: 1.2rem;
         width: 1.2rem;
         height: 1.2rem;
+      }
+      
+      &.this-month {
+        mat-icon {
+          font-size: 1.2rem;
+          width: 1.2rem;
+          height: 1.2rem;
+        }
+        
+        .month-display .month-abbr {
+          font-size: 0.5rem;
+        }
       }
     }
     

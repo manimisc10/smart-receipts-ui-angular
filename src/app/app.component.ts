@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule, MatSidenav } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { AuthService } from './services/auth.service';
 import { filter } from 'rxjs/operators';
 
@@ -24,7 +25,8 @@ import { filter } from 'rxjs/operators';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTooltipModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -35,6 +37,7 @@ export class AppComponent {
   isLandingPage = false;
   isMobile = false;
   currentPageTitle = '';
+  // Sidenav removed; keep reference optional for legacy checks
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
   constructor(private authService: AuthService, private router: Router) {
@@ -63,20 +66,7 @@ export class AppComponent {
     const wasMobile = this.isMobile;
     this.isMobile = window.innerWidth < 768;
     
-    // Only adjust sidebar state if screen size changed or on initial load
-    if (this.sidenav) {
-      if (this.isMobile) {
-        // Mobile: Keep sidebar closed by default
-        if (this.sidenav.opened) {
-          this.sidenav.close();
-        }
-      } else {
-        // Desktop: Ensure sidebar is open by default
-        if (!this.sidenav.opened) {
-          this.sidenav.open();
-        }
-      }
-    }
+    // No sidebar behavior anymore
   }
 
   closeSidenavOnMobile() {
@@ -99,4 +89,6 @@ export class AppComponent {
   setCurrentPageTitle(title: string) {
     this.currentPageTitle = title;
   }
+
+  // Removed resizer handlers
 }

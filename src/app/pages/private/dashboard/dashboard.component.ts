@@ -85,4 +85,14 @@ export class DashboardComponent implements OnInit {
     if (hour < 17) return 'Good afternoon';
     return 'Good evening';
   }
+
+  getCurrentMonth(): string {
+    const month = new Date().getMonth() + 1; // getMonth() returns 0-11, so add 1
+    return month.toString();
+  }
+
+  getCurrentMonthAbbr(): string {
+    const date = new Date();
+    return date.toLocaleDateString('en-US', { month: 'short' });
+  }
 }

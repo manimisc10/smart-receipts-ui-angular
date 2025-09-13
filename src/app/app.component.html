@@ -1,21 +1,40 @@
 <!-- Navigation for authenticated pages -->
 <div *ngIf="isLoggedIn && !isLandingPage">
   <mat-toolbar color="primary" class="app-toolbar">
-    <button mat-icon-button (click)="sidenav.toggle()" class="menu-button">
-      <mat-icon>menu</mat-icon>
-    </button>
-    
     <span class="app-title">
       <mat-icon class="title-icon">receipt</mat-icon>
       {{ title }}
     </span>
     
+    <!-- Centered desktop top-nav with labels -->
+    <div class="toolbar-center" *ngIf="!isMobile">
+      <nav class="top-nav top-nav-labeled">
+        <a mat-button [routerLink]="['/dashboard']" routerLinkActive="active-top-nav">
+          <mat-icon>dashboard</mat-icon>
+          <span>Dashboard</span>
+        </a>
+        <a mat-button [routerLink]="['/scan']" routerLinkActive="active-top-nav">
+          <mat-icon>camera_alt</mat-icon>
+          <span>Scan Receipt</span>
+        </a>
+        <a mat-button [routerLink]="['/history']" routerLinkActive="active-top-nav">
+          <mat-icon>history</mat-icon>
+          <span>Receipt History</span>
+        </a>
+        <a mat-button [routerLink]="['/analytics']" routerLinkActive="active-top-nav">
+          <mat-icon>analytics</mat-icon>
+          <span>Analytics</span>
+        </a>
+        <a mat-button [routerLink]="['/profile']" routerLinkActive="active-top-nav">
+          <mat-icon>person</mat-icon>
+          <span>Profile</span>
+        </a>
+      </nav>
+    </div>
+
     <span class="spacer"></span>
     
     <div class="toolbar-actions">
-      <button mat-icon-button [routerLink]="['/profile']" matTooltip="Profile">
-        <mat-icon>account_circle</mat-icon>
-      </button>
       <button mat-icon-button (click)="logout()" matTooltip="Logout">
         <mat-icon>logout</mat-icon>
       </button>
@@ -25,48 +44,9 @@
     </div>
   </mat-toolbar>
 
-  <mat-sidenav-container class="sidenav-container">
-    <!-- Desktop Sidebar -->
-    <mat-sidenav #sidenav [mode]="isMobile ? 'over' : 'side'" [opened]="!isMobile" class="sidenav">
-      <mat-nav-list>
-        <a mat-list-item [routerLink]="['/dashboard']" routerLinkActive="active-link" (click)="closeSidenavOnMobile()">
-          <mat-icon matListItemIcon>dashboard</mat-icon>
-          <span matListItemTitle>Dashboard</span>
-        </a>
-        
-        <a mat-list-item [routerLink]="['/scan']" routerLinkActive="active-link" (click)="closeSidenavOnMobile()">
-          <mat-icon matListItemIcon>camera_alt</mat-icon>
-          <span matListItemTitle>Scan Receipt</span>
-        </a>
-        
-        <a mat-list-item [routerLink]="['/history']" routerLinkActive="active-link" (click)="closeSidenavOnMobile()">
-          <mat-icon matListItemIcon>history</mat-icon>
-          <span matListItemTitle>Receipt History</span>
-        </a>
-        
-        <a mat-list-item [routerLink]="['/analytics']" routerLinkActive="active-link" (click)="closeSidenavOnMobile()">
-          <mat-icon matListItemIcon>analytics</mat-icon>
-          <span matListItemTitle>Analytics</span>
-        </a>
-        
-        <a mat-list-item [routerLink]="['/profile']" routerLinkActive="active-link" (click)="closeSidenavOnMobile()">
-          <mat-icon matListItemIcon>person</mat-icon>
-          <span matListItemTitle>Profile</span>
-        </a>
-      </mat-nav-list>
-    </mat-sidenav>
-    
-    <mat-sidenav-content class="sidenav-content">
-      <!-- Mobile Page Title -->
-      <div class="mobile-page-title" *ngIf="isMobile && currentPageTitle">
-        <h2>{{ currentPageTitle }}</h2>
-      </div>
-      
-      <div class="content-wrapper">
-        <router-outlet></router-outlet>
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+  <div class="content-wrapper">
+    <router-outlet></router-outlet>
+  </div>
 
   <!-- Mobile Bottom Navigation -->
   <div class="mobile-bottom-nav" *ngIf="isMobile">

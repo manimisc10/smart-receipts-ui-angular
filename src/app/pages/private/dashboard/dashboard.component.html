@@ -60,6 +60,9 @@
         <div class="stat-content">
           <div class="stat-icon this-month">
             <mat-icon>calendar_today</mat-icon>
+            <div class="month-display">
+              <span class="month-abbr">{{ getCurrentMonthAbbr() }}</span>
+            </div>
           </div>
           <div class="stat-info">
             <div class="stat-value">{{ formatCurrency(stats.thisMonth) }}</div>
