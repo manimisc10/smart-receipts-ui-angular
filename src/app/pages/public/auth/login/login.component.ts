@@ -7,7 +7,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AuthService, LoginRequest } from '../../../../services/auth.service';
 
@@ -32,12 +31,12 @@ export class LoginComponent {
   loginForm: FormGroup;
   isLoading = false;
   hidePassword = true;
+  errorMessage: string | null = null;
 
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router,
-    private snackBar: MatSnackBar
+    private router: Router
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -48,25 +47,19 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       this.isLoading = true;
+      this.errorMessage = null;
       const credentials: LoginRequest = this.loginForm.value;
       
       this.authService.login(credentials).subscribe({
         next: (user) => {
           this.isLoading = false;
-          this.snackBar.open('Login successful!', 'Close', {
-            duration: 3000,
-            horizontalPosition: 'center',
-            verticalPosition: 'top'
-          });
           this.router.navigate(['/dashboard']);
         },
         error: (error) => {
           this.isLoading = false;
-          this.snackBar.open('Login failed. Please check your credentials.', 'Close', {
-            duration: 5000,
-            horizontalPosition: 'center',
-            verticalPosition: 'top'
-          });
+          this.errorMessage = typeof error === 'string' && error.trim().length
+            ? error
+            : 'Login failed. Please check your credentials.';
         }
       });
     }

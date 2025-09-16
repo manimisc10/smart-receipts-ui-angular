@@ -63,11 +63,11 @@
             </button>
           </div>
 
-          <div class="demo-credentials">
-            <p><strong>Demo Credentials:</strong></p>
-            <p>Email: demo@example.com</p>
-            <p>Password: password</p>
+          <div *ngIf="errorMessage" class="inline-error">
+            {{ errorMessage }}
           </div>
+
+          
         </form>
       </mat-card-content>
 

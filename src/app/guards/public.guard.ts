@@ -2,13 +2,12 @@ import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
-export const publicGuard = () => {
+export const publicGuard = async () => {
   const authService = inject(AuthService);
   const router = inject(Router);
 
-  if (!authService.isAuthenticated()) {
-    return true;
-  }
+  const ok = await authService.checkSession();
+  if (!ok) return true;
 
   // User is authenticated, redirect to dashboard
   router.navigate(['/dashboard']);

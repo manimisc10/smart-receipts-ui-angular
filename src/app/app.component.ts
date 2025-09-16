@@ -51,7 +51,7 @@ export class AppComponent {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
-      this.isLandingPage = event.url === '/landing' || event.url === '/' || event.url === '' || 
+      this.isLandingPage = event.url === '/' || event.url === '' || 
                           event.url === '/login' || event.url === '/register';
     });
 
@@ -79,8 +79,8 @@ export class AppComponent {
     // On desktop, keep the sidebar open after navigation for better UX
   }
 
-  logout() {
-    this.authService.logout();
+  async logout() {
+    await this.authService.logout();
   }
 
   clearData() {
