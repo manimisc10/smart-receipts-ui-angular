@@ -8,6 +8,7 @@ import { MatSidenavModule, MatSidenav } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatMenuModule } from '@angular/material/menu';
 import { AuthService } from './services/auth.service';
 import { filter } from 'rxjs/operators';
 
@@ -26,7 +27,8 @@ import { filter } from 'rxjs/operators';
     MatSidenavModule,
     MatListModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatMenuModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

@@ -25,19 +25,25 @@
           <mat-icon>analytics</mat-icon>
           <span>Analytics</span>
         </a>
-        <a mat-button [routerLink]="['/profile']" routerLinkActive="active-top-nav">
-          <mat-icon>person</mat-icon>
-          <span>Profile</span>
-        </a>
       </nav>
     </div>
 
     <span class="spacer"></span>
     
     <div class="toolbar-actions">
-      <button mat-icon-button (click)="logout()" matTooltip="Logout">
-        <mat-icon>logout</mat-icon>
+      <button mat-icon-button [matMenuTriggerFor]="userMenu" aria-label="Account menu" matTooltip="Account">
+        <mat-icon>account_circle</mat-icon>
       </button>
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item [routerLink]="['/profile']">
+          <mat-icon>person</mat-icon>
+          <span>Profile</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
       <button mat-icon-button (click)="clearData()" matTooltip="Clear Data (Debug)" *ngIf="!isLoggedIn">
         <mat-icon>clear_all</mat-icon>
       </button>
@@ -80,14 +86,6 @@
        (click)="setCurrentPageTitle('Analytics')"
        class="mobile-nav-item">
       <mat-icon>analytics</mat-icon>
-    </a>
-    
-    <a mat-button 
-       [routerLink]="['/profile']" 
-       routerLinkActive="active-mobile-nav"
-       (click)="setCurrentPageTitle('Profile')"
-       class="mobile-nav-item">
-      <mat-icon>person</mat-icon>
     </a>
   </div>
 </div>

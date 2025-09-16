@@ -166,6 +166,93 @@ button[mat-stroked-button]:focus {
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
 }
 
+/* Simple and Direct Form Field Height Reduction with Proper Centering */
+/* Target the main form field container directly */
+.mat-mdc-form-field {
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+}
+
+/* Target the text field wrapper */
+.mat-mdc-form-field .mat-mdc-text-field-wrapper {
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Target the form field infix - this is the key container */
+.mat-mdc-form-field .mat-mdc-form-field-infix {
+  padding: 0 !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Target input elements */
+.mat-mdc-form-field input.mat-mdc-input-element {
+  padding: 0 !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Fix placeholder centering */
+.mat-mdc-form-field input.mat-mdc-input-element::placeholder {
+  line-height: 40px !important;
+  vertical-align: middle !important;
+}
+
+/* Fix icon centering - target suffix icons */
+.mat-mdc-form-field .mat-mdc-form-field-suffix,
+.mat-mdc-form-field .mat-mdc-form-field-prefix {
+  display: flex !important;
+  align-items: center !important;
+  height: 40px !important;
+}
+
+.mat-mdc-form-field .mat-mdc-form-field-suffix .mat-icon,
+.mat-mdc-form-field .mat-mdc-form-field-prefix .mat-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 20px !important;
+  width: 20px !important;
+  font-size: 20px !important;
+  line-height: 20px !important;
+}
+
+/* Fix button icons in suffix */
+.mat-mdc-form-field .mat-mdc-form-field-suffix button,
+.mat-mdc-form-field .mat-mdc-form-field-prefix button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 24px !important;
+  width: 24px !important;
+}
+
+.mat-mdc-form-field .mat-mdc-form-field-suffix button .mat-icon,
+.mat-mdc-form-field .mat-mdc-form-field-prefix button .mat-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 18px !important;
+  width: 18px !important;
+  font-size: 18px !important;
+  line-height: 18px !important;
+}
+
+/* Center label ONLY when not floating; preserve default when floating */
+.mat-mdc-form-field .mat-mdc-floating-label.mdc-floating-label:not(.mdc-floating-label--float-above) {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+
 /* Flat Button Theme */
 .mat-mdc-flat-button.mat-primary {
   color: var(--primary-color) !important;
@@ -188,6 +275,31 @@ button[mat-stroked-button]:focus {
 .mat-toolbar.mat-primary {
   background-color: var(--primary-color) !important;
   color: white !important;
+}
+
+/* Global: ensure account menu (mat-menu) text matches top-nav labels */
+
+/* Align account menu typography with top-nav buttons */
+.mat-mdc-menu-item {
+  height: 36px !important; /* reduce default density */
+  min-height: 36px !important;
+  padding: 0 12px !important;
+}
+
+.mat-mdc-menu-item .mdc-list-item__primary-text {
+  font-size: 14px !important; /* same as MatButton default */
+  font-weight: 500 !important; /* same weight as toolbar labels */
+  letter-spacing: 0.5px !important; /* match button label spacing */
+  color: #374151 !important; /* same gray as top-nav */
+  line-height: 20px !important;
+}
+
+.mat-mdc-menu-item mat-icon {
+  font-size: 18px !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin-right: 6px !important;
+  color: #6b7280 !important;
 }
 
 /* Form Field Theme */
